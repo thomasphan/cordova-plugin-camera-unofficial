@@ -17,6 +17,18 @@
 #         under the License.
 -->
 
+
+UNOFFICIAL VERSION NOTICE
+-------------------------
+My unofficial releases are synced against upstream/master branch.  
+Also, this releases are tested & contains the latest changes from upstream AND can contain new features/fixes that are not yet merged or released in the upstream/master branch.
+
+Consider this branch & its releases as a bleeding-edge version.  
+Contributions are welcomed!  
+**Enjoy!**
+
+-------------------------
+
 # cordova-plugin-camera
 
 This plugin defines a global `navigator.camera` object, which provides an API for taking pictures and for choosing images from
