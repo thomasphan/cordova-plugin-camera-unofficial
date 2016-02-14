@@ -689,17 +689,11 @@ private String ouputModifiedBitmap(Bitmap bitmap, Uri uri) throws IOException {
 
                         } catch (Exception e) {
                             e.printStackTrace();
-                            this.failPicture("Error modifying image");
+                            this.failPicture("Error retrieving image.");
                         }
                     }
                     else {
-                        if (fileLocation != null) {
-                            this.callbackContext.success("file://" + fileLocation);
-                        } else if (uriString != null) {
-                            this.callbackContext.success(uriString);
-                        } else {
-                            this.failPicture("Error retrieving image");
-                        }
+                        this.callbackContext.success(fileLocation);
                     }
                 }
                 if (bitmap != null) {
