@@ -174,8 +174,13 @@ public class CameraLauncher extends CordovaPlugin implements MediaScannerConnect
                     // Any options that edit the file require READ permissions in order to try and
                     // preserve the original exif data and filename in the modified file that is
                     // created
-                    if(this.mediaType == PICTURE && (this.destType == FILE_URI || this.destType == NATIVE_URI)
-                            && fileWillBeModified() && !PermissionHelper.hasPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)) {
+                    if(
+                        this.mediaType == PICTURE
+                        && (this.destType == FILE_URI || this.destType == NATIVE_URI)
+                        // requestPermission even if !fileWillBeModified
+                        // && fileWillBeModified()
+                        && !PermissionHelper.hasPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)
+                    ) {
                         PermissionHelper.requestPermission(this, SAVE_TO_ALBUM_SEC, Manifest.permission.READ_EXTERNAL_STORAGE);
                     } else {
                         this.getImage(this.srcType, destType, encodingType);
